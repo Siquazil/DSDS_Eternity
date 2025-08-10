@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Solo Leveling - Fan Homepage</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            /* Neuer violetter Verlaufshintergrund passend zu Solo Leveling */
+            background: linear-gradient(135deg, #2a0845 0%, #6441a5 40%, #1b1b2f 100%);
+            color: #f5f6fa;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(90deg, #232526 0%, #414345 100%);
+            padding: 40px 0 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 12em;
+            color: #00bfff;
+            letter-spacing: 3px;
+            text-shadow: 0 0 18px #00bfff, 0 2px 12px #000, 0 0 40px #00bfff;
+            padding-bottom: 10px;
+            margin: 0;
+        }
+        .intro {
+            /* Anpassung: gleiche max-width und zentriert wie .gallery-item */
+            max-width: 2600px;
+            width: 100%;
+            margin: 30px auto 40px auto;
+            font-size: 6em; /* vorher 12em */
+            line-height: 1.1;
+            background: rgba(34, 34, 34, 0.8);
+            padding: 32px 48px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+            text-align: center;
+            /* Neu: gleiche Box-Optik wie .gallery-item */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gallery {
+            max-width: 98vw;
+            margin: 0 auto 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background: #23272a;
+            margin-bottom: 28px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+            overflow: hidden;
+            width: 100%;
+            max-width: 2600px; /* mehr Platz */
+        }
+        .gallery-item img {
+            width: 1300px;
+            max-width: 100%;
+            min-width: 0;
+            height: 2008px;
+            object-fit: cover;
+            border-right: 4px solid #00bfff;
+            border-left: none;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.04);
+            box-shadow: 0 0 60px 10px #7f5cff, 0 0 0 4px #00bfff;
+        }
+        /* Größe für das zweite Bild angleichen */
+        .gallery-item:nth-child(2) img {
+            width: 1300px;
+            max-width: 100%;
+            min-width: 0;
+            height: 2008px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+        .gallery-item p {
+            margin: 0 0 0 80px;
+            font-size: 6em;
+            line-height: 1.1;
+            color: #e1e1e1;
+            flex: 2 1 0;
+            min-width: 500px;
+            max-width: 1600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column; /* Text untereinander */
+        }
+        /* Text beim zweiten Bild extrem groß und mittig */
+        .gallery-item:nth-child(2) p {
+            font-size: 6em;
+            max-width: 1600px;
+            min-width: 0;
+            line-height: 1.1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 2008px;
+            margin-left: 80px;
+            text-align: center;
+            word-break: break-word;
+            flex: 2 1 0;
+        }
+        @media (max-width: 1400px) {
+            .gallery-item img,
+            .gallery-item:nth-child(2) img {
+                width: 100vw;
+                height: auto;
+                max-width: 100vw;
+            }
+            .intro {
+                max-width: 100vw;
+                font-size: 3em; /* vorher 6em */
+                padding: 24px 8px;
+            }
+            .gallery-item p {
+                font-size: 3em;
+                margin-left: 24px;
+                min-width: 180px;
+                max-width: 100vw;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                flex: 1 1 0;
+            }
+            .gallery-item:nth-child(2) p {
+                font-size: 3em;
+                height: auto;
+                margin-left: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                max-width: 100vw;
+                flex: 1 1 0;
+            }
+        }
+        @media (max-width: 1200px) {
+            .gallery-item img {
+                width: 50vw;
+                max-width: 700px;
+                height: 350px;
+            }
+        }
+        @media (max-width: 900px) {
+            .gallery {
+                max-width: 100vw;
+            }
+            .gallery-item img {
+                width: 100%;
+                max-width: 100%;
+                height: 300px;
+            }
+        }
+        @media (max-width: 600px) {
+            .gallery {
+                align-items: stretch;
+            }
+            .gallery-item {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                max-width: 100vw;
+                width: 100vw;
+                margin-bottom: 16px;
+            }
+            .intro {
+                max-width: 98vw;
+                font-size: 1em; /* vorher 2em */
+                padding: 16px 8px;
+            }
+            .gallery-item img,
+            .gallery-item:nth-child(2) img {
+                width: 100vw;
+                max-width: 100vw;
+                height: auto;
+                border-right: none;
+                border-bottom: 4px solid #00bfff;
+                margin: 0 auto;
+            }
+            .gallery-item p,
+            .gallery-item:nth-child(2) p {
+                font-size: 1.1em;
+                margin: 12px 4px;
+                min-width: 0;
+                max-width: 98vw;
+                height: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                flex: 1 1 0;
+                line-height: 1.3;
+            }
+            header h1 {
+                font-size: 4em;
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            Deutschland sucht den Superrare!
+        </h1>
+    </header>
+    <div class="intro">
+        Willkommen im großen Deutschland sucht den Superrare Eternity Event, wähle einen unserer unten stehenden Super Rares aus und mit etwas Glück und Geschick gewinnst du tolle Preise!
+    </div>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="Kritmeister2.png" alt="Sung Jin-Woo">
+            <p>
+                Kritmeister Tae-Shik Kang<br>
+                <em>"Ich steche, bevor ich Schieße"</em><br>
+                <br>
+                Waffe: Stahldolch Level 1<br>
+                Kerne: Krit.<br>
+                Kritschaden.<br>
+                Kritschaden.<br>
+                <br>
+                Weitere Bonis: /
+            </p>
+        </div>
+        <div class="gallery-item">
+            <img src="Spezialist.png" alt="Spezialist">
+            <p>
+                Spezialist Chi-Yul Song<br>
+                <em>"Brauchst du Feuer?"</em><br>
+                <br>
+                Waffe: Stahldolch Level 1<br>
+                Kern: Schadenserhöhung 3x<br>
+                <br>
+                Weitere Bonis: Bekommt Armband und Halskette von Jin Woo (Experte)
+            </p>
+        </div>
+        <div class="gallery-item">
+            <img src="Iceage.png" alt="Cha Hae-In">
+            <p>
+                Chae-Young Nam<br>
+                <em>"Meine Gegner bewegen sich immer auf sehr dünnem Eis"</em><br>
+                <br>
+                Waffe: Stahlstab Level 20<br>
+                Kern: 3x Vert. Durchschlag<br>
+                <br>
+                Weitere Bonis: Drückt vor dem Kampf auf Auto Ausrüsten
+            </p>
+        </div>
+        <div class="gallery-item">
+            <img src="Richboy.png" alt="Antares">
+            <p>
+                Richboy Jin-Ho Yoo<br>
+                <em>"Kann man sich den Sieg noch kaufen?"</em><br>
+                <br>
+                Waffe: Stahlaxt Level 1<br>
+                Kerne: Kritschaden, Schadenserhöhung, Vert. Durchschlag<br>
+                <br>
+                Weitere Bonis: Beschwört am Anfang des Kampfes 1x die Schatten.
+            </p>
+        </div>
+        <div class="gallery-item">
+            <img src="wind.png" alt="Gate">
+            <p>
+                Wütender Tornado Hee-Jin Park<br>
+                <em>"Erst kommt der Sturm und dann komm ich..und dann wünschen sie sich den Sturm zurück"</em><br>
+                <br>
+                Waffe: Stahllangschwert Level 40<br>
+                Kern: 3x Verr. MP Nutzung<br>
+                <br>
+                Weitere Bonis: Bei Windschwäche rüstet sie ein starkes Windschaden% Armband aus
+            </p>
+        </div>
+    </div>
+    <div style="width:100%;text-align:center;margin:40px 0 60px 0;font-size:4em;">
+        <p>
+            Stimme jetzt ab auf unserem Discord!<br>
+            <a href="https://discord.com/invite/xEPADY5tjj" target="_blank" style="color:#00bfff;text-decoration:underline;">
+                https://discord.com/invite/xEPADY5tjj
+            </a>
+        </p>
+    </div>
+</body>
+</html>
